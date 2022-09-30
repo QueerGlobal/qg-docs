@@ -1,0 +1,271 @@
+openapi: "3.0.0"
+info:
+  version: '0.0.1'
+  title: QueerGlobal Profile API
+  description: An api for Profile data in the QueerGlobal system
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Swagger API Team
+    email: apiteam@swagger.io
+    url: http://swagger.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://queerglobal.com/api
+paths:
+  /healthcheck:
+    get:
+      summary: Healthcheck for this API
+      description: Healthcheck for server status
+      operationId: InternalHealthCheck
+      responses:
+        '200':
+          description: Response to healthchecks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthCheckResponse'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /profile/{id}:
+    get:
+      summary: Returns a profile by ID
+      description: Returns a profile based on a single ID
+      operationId: FindProfileById
+      parameters:
+        - name: id
+          in: path
+          description: ID of profile to fetch
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: profile response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Deletes a profile by ID
+      description: deletes a single profile based on the ID supplied
+      operationId: delete profile
+      parameters:
+        - name: id
+          in: path
+          description: ID of profile to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: profile deleted
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    put:
+      summary: Update a profile
+      description: Updates profile. Duplicates are allowed
+      operationId: UpdateProfile
+      parameters:
+        - name: id
+          in: path
+          description: ID of profile to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Profile to update to the page
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+      responses:
+        '200':
+          description: profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+  /profile:
+    post:
+      summary: Creates a new profile
+      description: Creates a new profile. Duplicates are allowed
+      operationId: AddProfile
+      requestBody:
+        description: Profile to add to the page
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+      responses:
+        '200':
+          description: profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    get:
+      summary: Returns profile based on query strings
+      description: Returns profile based on query strings
+      operationId: FindProfile
+      parameters:
+        - name: ta
+          in: query
+          description: tags to filter by
+          required: false
+          style: form
+          schema:
+            type: array
+            items:
+              type: string
+        - name: primarycategoryID
+          in: query
+          description: ID of category to fetch
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: categoryID
+          in: query
+          description: ID of category to fetch
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: limit
+          in: query
+          description: maximum number of results to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: page
+          in: query
+          description: page number of to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+
+      responses:
+        '200':
+          description: profile response
+          content:
+            application/json:
+              schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Profile'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    HealthCheckResponse:
+      type: object
+      required: 
+        - status
+        - serviceName
+      properties: 
+        status: 
+          type: string
+        serviceName:
+          type: string
+
+    Profile:
+      required:
+        - userName
+        - personID
+      properties:
+        profileID:
+          type: string
+        personID:
+          type: number
+          format: int64
+        location:
+          type: Location
+        socialLinks:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialLink'
+        chips: 
+          type: array
+          items:
+            $ref: '#/components/schemas/Chip'
+
+    Chip:
+      required:
+        - value
+      properties:
+        value:
+          type: string
+
+    SocialLinks:
+      required:
+        - serviceName
+        - linkToService
+        - handle
+      properties:
+        serviceName:
+          type: string
+        linkToService:
+          type: string
+        handle:
+          type: string
+
+
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int64
+          description: Error code
+        message:
+          type: string
+          description: Error message

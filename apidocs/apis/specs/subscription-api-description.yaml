@@ -1,0 +1,238 @@
+openapi: "3.0.0"
+info:
+  version: '0.0.1'
+  title: QueerGlobal Subscription API
+  description: An api for Subscription data in the QueerGlobal system
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Swagger API Team
+    email: apiteam@swagger.io
+    url: http://swagger.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://queerglobal.com/api
+paths:
+  /healthcheck:
+    get:
+      summary: Healthcheck for this API
+      description: Healthcheck for server status
+      operationId: InternalHealthCheck
+      responses:
+        '200':
+          description: Response to healthchecks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthCheckResponse'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /subscription/{id}:
+    get:
+      summary: Returns a subscription by ID
+      description: Returns a subscription based on a single ID
+      operationId: FindSubscriptionById
+      parameters:
+        - name: id
+          in: path
+          description: ID of subscription to fetch
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: subscription response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Deletes a subscription by ID
+      description: deletes a single subscription based on the ID supplied
+      operationId: delete subscription
+      parameters:
+        - name: id
+          in: path
+          description: ID of subscription to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: subscription deleted
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    put:
+      summary: Update a subscription
+      description: Updates subscription. Duplicates are allowed
+      operationId: UpdateSubscription
+      parameters:
+        - name: id
+          in: path
+          description: ID of subscription to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Subscription to update to the page
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
+      responses:
+        '200':
+          description: subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+  /subscription:
+    post:
+      summary: Creates a new subscription
+      description: Creates a new subscription. Duplicates are allowed
+      operationId: AddSubscription
+      requestBody:
+        description: Subscription to add to the page
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
+      responses:
+        '200':
+          description: subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    get:
+      summary: Returns subscription based on query string
+      description: Returns subscription based on query strings
+      operationId: FindSubscriptions
+      parameters:
+        - name: userName          
+          in: query
+          description: ID of user to fetch
+          required: false
+          schema:
+            type: integer
+            format: int64
+
+      responses:
+        '200':
+          description: subscription response
+          content:
+            application/json:
+              schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Subscription'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    HealthCheckResponse:
+      type: object
+      required: 
+        - status
+        - serviceName
+      properties: 
+        status: 
+          type: string
+        serviceName:
+          type: string
+
+
+    SubscriptionType:
+      required:
+        - subscriptionTypeID
+        - subscriptionTypeName
+      properties:
+        subscriptionTypeID:
+          type: integer
+          format: int64
+        subscriptionTypeName:
+          type: integer
+          format: int64
+
+
+    Subscription:
+      required:
+        - subscriptionType
+        - Owner
+      properties:
+        subscriptionID:
+          type: integer
+          format: int64
+        subscriptionType:
+          type: object
+            $ref: '#/components/schemas/SubscriptionType'
+        lastName:
+          type: string
+        location:
+          type: Location
+        socialLinks:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialLink'
+        chips: 
+          type: array
+          items:
+            $ref: '#/components/schemas/Chip'
+
+
+
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int64
+          description: Error code
+        message:
+          type: string
+          description: Error message

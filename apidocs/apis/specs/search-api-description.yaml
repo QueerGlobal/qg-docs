@@ -1,0 +1,191 @@
+openapi: "3.0.0"
+info:
+  version: '0.0.1'
+  title: QueerGlobal Search API
+  description: An api for Search data in the QueerGlobal system
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Swagger API Team
+    email: apiteam@swagger.io
+    url: http://swagger.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://queerglobal.com/api
+paths:
+  /healthcheck:
+    get:
+      summary: Healthcheck for this API
+      description: Healthcheck for server status
+      operationId: InternalHealthCheck
+      responses:
+        '200':
+          description: Response to healthchecks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HealthCheckResponse'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /search/{id}:
+    get:
+      summary: Returns a search status by ID
+      description: Returns a search status based on a single ID
+      operationId: SearchStatusById
+      parameters:
+        - name: id
+          in: path
+          description: ID of search to fetch
+          required: true
+          schema:
+            type: string
+        - name: returnresults
+          in: query
+          description: Boolean indicating whether to return search results
+          required: true
+          schema:
+            type: boolean
+
+      responses:
+        '200':
+          description: person response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /search:
+    post:
+      summary: Executes a search
+      description: Executes a search
+      operationId: ExecuteSearch
+      requestBody:
+        description: Query or search terms to search
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Search'
+      responses:
+        '200':
+          description: person
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchStatus'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+components:
+  schemas:
+    HealthCheckResponse:
+      type: object
+      required: 
+        - status
+        - serviceName
+      properties: 
+        status: 
+          type: string
+        serviceName:
+          type: string
+
+    SearchStatus:
+      required:
+        - searchID
+        - status
+      properties:
+        searchID:
+          type: integer
+          format: int64
+        status:
+          type: string
+        search:
+          type: object
+            $ref: '#/components/schemas/Search'
+        location:
+          type: Location
+        results:
+          type: array
+          items: 
+            $ref: '#/components/schemas/SearchResult'
+
+    Search:
+      required:
+        - query
+      properties:
+        value:
+          type: string
+
+    SearchResult:
+      required:
+        - resultID
+        - objectType
+        - objectID
+        - objectSummary
+      properties:
+        resultID:
+          type: integer
+            format: int64
+        objectType:
+          type: string
+        objectID:
+          type: integer
+            format: int64
+          type: string
+        objectSummary:
+          type: object
+            $ref: '#/components/schemas/ObjectSummary'
+
+    ObjectSummary:
+      type: object
+      required:
+        - ObjectID
+        - ObjectType
+        - Title
+        - Header
+        - ObjectURL
+      properties: 
+        ObjectID:
+          type: integer
+          format: int64
+        ObjectType:
+          type: string
+        Title:
+          type: string
+        Header:
+          type: string
+        ObjectURL:
+          type: string
+          format: url
+
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int64
+          description: Error code
+        message:
+          type: string
+          description: Error message
