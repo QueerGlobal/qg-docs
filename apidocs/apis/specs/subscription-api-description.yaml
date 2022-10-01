@@ -191,36 +191,27 @@ components:
         - subscriptionTypeName
       properties:
         subscriptionTypeID:
-          type: integer
+          type: number
           format: int64
         subscriptionTypeName:
-          type: integer
+          type: number
           format: int64
 
 
     Subscription:
       required:
         - subscriptionType
-        - Owner
+        - OwnerPersonID
       properties:
         subscriptionID:
-          type: integer
+          type: number
+          format: int64
+        OwnerPersonID:
+          type: number
           format: int64
         subscriptionType:
           type: object
-            $ref: '#/components/schemas/SubscriptionType'
-        lastName:
-          type: string
-        location:
-          type: Location
-        socialLinks:
-          type: array
-          items:
-            $ref: '#/components/schemas/SocialLink'
-        chips: 
-          type: array
-          items:
-            $ref: '#/components/schemas/Chip'
+          $ref: '#/components/schemas/SubscriptionType'
 
 
 
@@ -230,7 +221,7 @@ components:
         - message
       properties:
         code:
-          type: integer
+          type: number
           format: int64
           description: Error code
         message:

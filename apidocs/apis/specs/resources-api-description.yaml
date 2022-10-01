@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: '0.0.1'
-  title: QueerGlobal API
+  title: QueerGlobal Resources API
   description: An api for the QueerGlobal system
   termsOfService: http://swagger.io/terms/
   contact:
@@ -260,10 +260,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Category'
-        Tags:
+        Chips: 
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/Chip'
         
 
     ResourceResponse:
@@ -296,6 +296,17 @@ components:
           format: int64
         Object:
           type: object
+
+
+    Chip:
+      required:
+        - value
+      properties:
+        id:
+          type: number
+          format: int64
+        value:
+          type: string
 
 
     Category:

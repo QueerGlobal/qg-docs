@@ -1,0 +1,343 @@
+{
+  "uuid": "88b0ff43-7c8e-43b5-b615-c93af18e48b2",
+  "lastMigration": 20,
+  "name": "QueerGlobal Artwork API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "3644549e-59e6-46d4-b368-d48b679fef77",
+      "documentation": "Healthcheck for this API",
+      "method": "get",
+      "endpoint": "healthcheck",
+      "responses": [
+        {
+          "uuid": "b12a04a4-286a-4797-8652-855ce59f39ca",
+          "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response to healthchecks",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "fe301ab9-e65d-4b6e-9009-4ad105e22aaa",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "afb8faa4-f61f-4926-abbd-9266a19928a4",
+      "documentation": "Returns an artwork by ID",
+      "method": "get",
+      "endpoint": "artwork/:id",
+      "responses": [
+        {
+          "uuid": "610624f6-efe4-4a24-9868-3afe0568fa63",
+          "body": "{\n  \"artworkID\": {{faker 'datatype.number'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "artwork response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "d932c83e-506b-4d20-8ea1-cc51ef87f0ee",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "cd53fdef-9dae-4124-bf14-4fa4fd032e3d",
+      "documentation": "Deletes an artwork by ID",
+      "method": "delete",
+      "endpoint": "artwork/:id",
+      "responses": [
+        {
+          "uuid": "20722f55-698c-4b81-8cf9-baf97ff8d118",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "artwork deleted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "de855ff4-b4f9-4ce6-b3cf-8ee98fba202e",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c8527150-9b2a-4480-9837-89595ca8e351",
+      "documentation": "Update an artwork",
+      "method": "put",
+      "endpoint": "artwork/:id",
+      "responses": [
+        {
+          "uuid": "7b394fd2-e32e-4926-9f06-47d14db44f85",
+          "body": "{\n  \"artworkID\": {{faker 'datatype.number'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "artwork",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "03f14975-a260-4ccc-a1af-6933fbd9d140",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "734c3a39-1447-4162-a41b-4b2254b46522",
+      "documentation": "Creates a new artwork",
+      "method": "post",
+      "endpoint": "artwork",
+      "responses": [
+        {
+          "uuid": "d55e40cc-3aa8-4d4d-a068-9f97f59d00a1",
+          "body": "{\n  \"artworkID\": {{faker 'datatype.number'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "artwork",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "df3b24c6-da5c-4cc9-a8d7-ae6536d1930a",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "35366bea-d576-4a8e-bf97-1df41ce844e9",
+      "documentation": "Returns artwork based on query string",
+      "method": "get",
+      "endpoint": "artwork",
+      "responses": [
+        {
+          "uuid": "5d8e9912-a81c-4817-957c-20edfeb1dcc1",
+          "body": "[\n  {\n    \"artworkID\": {{faker 'datatype.number'}},\n    \"artworkType\": {\n      \"artworkTypeID\": {{faker 'datatype.number'}},\n      \"artworkTypeName\": {{faker 'datatype.number'}}\n    },\n    \"ownerPersonID\": {{faker 'datatype.number'}},\n    \"chips\": [\n      {\n        \"id\": {{faker 'datatype.number'}},\n        \"value\": \"\"\n      }\n    ]\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "artwork response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "fb0ab5fb-bd4c-4204-96fe-d941909599e3",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

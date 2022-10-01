@@ -60,7 +60,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SearchResponse'
+                $ref: '#/components/schemas/SearchResult'
         default:
           description: unexpected error
           content:
@@ -120,7 +120,7 @@ components:
           type: string
         search:
           type: object
-            $ref: '#/components/schemas/Search'
+          $ref: '#/components/schemas/Search'
         location:
           type: Location
         results:
@@ -144,16 +144,15 @@ components:
       properties:
         resultID:
           type: integer
-            format: int64
+          format: int64
         objectType:
           type: string
         objectID:
           type: integer
-            format: int64
-          type: string
+          format: int64
         objectSummary:
           type: object
-            $ref: '#/components/schemas/ObjectSummary'
+          $ref: '#/components/schemas/ObjectSummary'
 
     ObjectSummary:
       type: object

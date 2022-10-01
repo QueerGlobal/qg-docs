@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mockoon-cli dockerize --data mocks/mock_artwork_api.json --port 3002  --output mocks/artwork_dockerfile
-mockoon-cli dockerize --data mocks/mock_business_api.json --port 3003  --output mocks/business_dockerfile
+mockoon-cli dockerize --data mocks/mock_artwork_api.json --port 3001  --output mocks/artwork_dockerfile
+mockoon-cli dockerize --data mocks/mock_business_api.json --port 3002  --output mocks/business_dockerfile
 mockoon-cli dockerize --data mocks/mock_events_api.json --port 3004  --output mocks/events_dockerfile
 mockoon-cli dockerize --data mocks/mock_locations_api.json --port 3005  --output mocks/locations_dockerfile
 mockoon-cli dockerize --data mocks/mock_person_api.json --port 3006  --output mocks/person_dockerfile

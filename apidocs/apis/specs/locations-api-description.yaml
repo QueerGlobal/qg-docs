@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: '0.0.1'
-  title: QueerGlobal Location API
+  title: QueerGlobal Locations API
   description: An api for Location data in the QueerGlobal system
   termsOfService: http://swagger.io/terms/
   contact:

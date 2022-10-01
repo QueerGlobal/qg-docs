@@ -1,0 +1,598 @@
+{
+  "uuid": "52a1135b-1b33-4d92-bd95-6bef57f5b649",
+  "lastMigration": 20,
+  "name": "QueerGlobal RoleBased Auth API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3008,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "575b3654-2c2a-4064-90e5-d20b2526d0e4",
+      "documentation": "Healthcheck for this API",
+      "method": "get",
+      "endpoint": "healthcheck",
+      "responses": [
+        {
+          "uuid": "441da064-4789-40fe-8f75-4dec36bbf7d8",
+          "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response to healthchecks",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "ba70e5e6-2edb-4650-8c43-3e68d2c53fb7",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4e31593b-d395-44f9-b89c-0d4f81d1d451",
+      "documentation": "Returns a member by ID",
+      "method": "get",
+      "endpoint": "member/:id",
+      "responses": [
+        {
+          "uuid": "951fadae-bfa7-4293-885e-69075fb665b2",
+          "body": "{\n  \"userName\": \"\",\n  \"memberID\": {{faker 'datatype.number'}},\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"email\": \"\",\n  \"roles\": {\n    \"roleID\": {{faker 'datatype.number'}},\n    \"roleName\": \"\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "0b5027b4-cc7d-45b2-9967-04fc4e2531c8",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a77def06-572a-485f-b649-bf33d1be285b",
+      "documentation": "Deletes a member by ID",
+      "method": "delete",
+      "endpoint": "member/:id",
+      "responses": [
+        {
+          "uuid": "5c46871c-406f-4834-a6a0-075b9c6466ef",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "member deleted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "c9a7a988-ea3c-4b1b-9dfe-abd8c350c8b3",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "565a7e29-0ac3-4edf-b68b-a2c672ffa504",
+      "documentation": "Update a member",
+      "method": "put",
+      "endpoint": "member/:id",
+      "responses": [
+        {
+          "uuid": "40d0bd06-08ed-409d-a2ad-aa84f5e241c7",
+          "body": "{\n  \"userName\": \"\",\n  \"memberID\": {{faker 'datatype.number'}},\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"email\": \"\",\n  \"roles\": {\n    \"roleID\": {{faker 'datatype.number'}},\n    \"roleName\": \"\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "14d3a5d7-b9b9-4917-92b1-c723a8f79471",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9fe7d839-ce9e-4286-993d-6cc6015e009b",
+      "documentation": "Creates a new member",
+      "method": "post",
+      "endpoint": "member",
+      "responses": [
+        {
+          "uuid": "7164e54a-3f2e-4740-8f23-e7fb7ff6a6cb",
+          "body": "{\n  \"userName\": \"\",\n  \"memberID\": {{faker 'datatype.number'}},\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"email\": \"\",\n  \"roles\": {\n    \"roleID\": {{faker 'datatype.number'}},\n    \"roleName\": \"\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "14bc65a1-2f9f-4fa8-b51d-0ba29e16feb1",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "dde5e4f2-9efb-44fc-aca8-d15b3a54fbc2",
+      "documentation": "Returns member based on query string",
+      "method": "get",
+      "endpoint": "member",
+      "responses": [
+        {
+          "uuid": "1ce1aedb-ab75-4b4d-ab7c-a483c027b068",
+          "body": "[\n  {\n    \"userName\": \"\",\n    \"memberID\": {{faker 'datatype.number'}},\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"email\": \"\",\n    \"roles\": {\n      \"roleID\": {{faker 'datatype.number'}},\n      \"roleName\": \"\"\n    }\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "f2d2005e-b415-4a19-9b1b-53867ba00159",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f7d8ba45-86fe-45a7-8933-834d240cb1ea",
+      "documentation": "Returns a role by ID",
+      "method": "get",
+      "endpoint": "role/:id",
+      "responses": [
+        {
+          "uuid": "351fe9e5-a74b-4eb7-8abb-fc34dd2fe1d7",
+          "body": "{\n  \"roleID\": {{faker 'datatype.number'}},\n  \"roleName\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "65001378-27bd-4ce7-9c17-d70232a34727",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0f5f88d9-9635-42c7-82c6-ced4eb877f58",
+      "documentation": "Deletes a member by ID",
+      "method": "delete",
+      "endpoint": "role/:id",
+      "responses": [
+        {
+          "uuid": "5958b399-31e7-4be9-a8e0-2cf4bdfe6a94",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "member deleted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "2ff948f3-c60d-43fc-93de-95b273c2db1c",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "06f6e786-8140-4b5f-a9ba-84183086d043",
+      "documentation": "Update a member",
+      "method": "put",
+      "endpoint": "role/:id",
+      "responses": [
+        {
+          "uuid": "0109038a-dab1-4c87-a44e-a89cbbb7010f",
+          "body": "{\n  \"roleID\": {{faker 'datatype.number'}},\n  \"roleName\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "b3f606df-efd6-4a0f-97be-842d32a87fc7",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "34d242e5-4b12-41d3-8886-98e3e06ba686",
+      "documentation": "Creates a new role",
+      "method": "post",
+      "endpoint": "role",
+      "responses": [
+        {
+          "uuid": "a36f7117-b561-457d-8d99-1a14064bece4",
+          "body": "{\n  \"roleID\": {{faker 'datatype.number'}},\n  \"roleName\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "193c7a98-cba0-4dc0-975e-00f96735cf9c",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "118fb81a-233a-4043-8aad-aa2109511e6d",
+      "documentation": "Returns member based on query string",
+      "method": "get",
+      "endpoint": "role",
+      "responses": [
+        {
+          "uuid": "5a5f6ce5-4316-4b81-9218-aaae1eb4d43e",
+          "body": "[\n  {\n    \"roleID\": {{faker 'datatype.number'}},\n    \"roleName\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "81ad7cb3-6a7b-4ee6-b462-ef9388db3792",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

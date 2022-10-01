@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: '0.0.1'
-  title: QueerGlobal API
+  title: QueerGlobal Events API
   description: An api for events in for the QueerGlobal system
   termsOfService: http://swagger.io/terms/
   contact:
@@ -37,8 +37,8 @@ paths:
 
   /events/{id}:
     get:
-      summary: Returns a event by ID
-      description: Returns a event based on a single ID
+      summary: Returns an event by ID
+      description: Returns an event based on a single ID
       operationId: FindEventById
       parameters:
         - name: id
@@ -62,7 +62,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Deletes a event by ID
+      summary: Deletes an event by ID
       description: deletes a single event based on the ID supplied
       operationId: delete event
       parameters:
@@ -84,7 +84,7 @@ paths:
                 $ref: '#/components/schemas/Error'
 
     put:
-      summary: Update a event
+      summary: Update an event
       description: Updates event. Duplicates are allowed
       operationId: UpdateEvent
       parameters:
@@ -260,10 +260,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Category'
-        Tags:
+        Chips: 
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/Chip'
         
 
     EventResponse:
@@ -296,6 +296,17 @@ components:
           format: int64
         Object:
           type: object
+
+    
+    Chip:
+      required:
+        - value
+      properties:
+        id:
+          type: number
+          format: int64
+        value:
+          type: string
 
 
     Category:

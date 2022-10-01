@@ -1,0 +1,343 @@
+{
+  "uuid": "5423f053-e2f0-489a-a204-e6276121ab3e",
+  "lastMigration": 20,
+  "name": "QueerGlobal Resources API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3006,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "62e4598a-0970-47c1-ab62-2cadfb27ce38",
+      "documentation": "Healthcheck for this API",
+      "method": "get",
+      "endpoint": "healthcheck",
+      "responses": [
+        {
+          "uuid": "a4269562-00e1-4a1a-890c-fd3562c59a44",
+          "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response to healthchecks",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "29b7885c-313b-41da-9339-3daf2f9c3d7a",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "eff4b9c8-45bb-449f-bc24-d43606d6e8d0",
+      "documentation": "Returns a resource by ID",
+      "method": "get",
+      "endpoint": "resources/:id",
+      "responses": [
+        {
+          "uuid": "7f65a104-0bd5-4db6-940b-47f6171a4aab",
+          "body": "{\n  \"ResourceID\": {{faker 'datatype.number'}},\n  \"Summary\": {\n    \"ResourceID\": {{faker 'datatype.number'}},\n    \"Owner\": {{faker 'datatype.number'}},\n    \"Type\": \"\",\n    \"Header\": \"\",\n    \"Title\": \"\",\n    \"Status\": 1\n  },\n  \"Body\": \"\",\n  \"Objects\": [\n    {\n      \"ObjectID\": {{faker 'datatype.number'}},\n      \"ObjectName\": \"\",\n      \"ObjectType\": \"\",\n      \"ObjectTypeID\": {{faker 'datatype.number'}},\n      \"Object\": {}\n    }\n  ],\n  \"Categories\": [\n    {\n      \"CategoryID\": {{faker 'datatype.number'}},\n      \"CategoryName\": \"\",\n      \"CategoryDescription\": \"\"\n    }\n  ],\n  \"Chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "resource response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "3557dde3-d0ba-4f5b-8f80-ec1b44210aa7",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6c7f0aa1-467b-4a85-9fd0-b2d16cd72b8d",
+      "documentation": "Deletes a resource by ID",
+      "method": "delete",
+      "endpoint": "resources/:id",
+      "responses": [
+        {
+          "uuid": "460aadaf-7c63-4e7f-8b1c-5d49d4660506",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "resource deleted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "b383d004-baa4-4215-8864-cbdad3a8e7b7",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "177a6923-381d-49ba-95f7-d27958c709d0",
+      "documentation": "Update a resource",
+      "method": "put",
+      "endpoint": "resources/:id",
+      "responses": [
+        {
+          "uuid": "637876ef-725c-4c80-adeb-52f21d756b84",
+          "body": "{\n  \"ResourceID\": {{faker 'datatype.number'}},\n  \"Status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "resource",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "221430a9-2d83-467f-8796-379d3c057b7f",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d23b90ab-1911-42c2-9d75-9ec27c2e6554",
+      "documentation": "Creates a new resource",
+      "method": "post",
+      "endpoint": "resources",
+      "responses": [
+        {
+          "uuid": "898dfb30-a99b-457b-951c-0224cd573275",
+          "body": "{\n  \"ResourceID\": {{faker 'datatype.number'}},\n  \"Status\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "resource",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "178833b3-65bf-477c-9ca3-b819414cefca",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "97ee8bd1-2aaa-4aaa-a938-65b61447b4af",
+      "documentation": "Returns resources based on query strings",
+      "method": "get",
+      "endpoint": "resources",
+      "responses": [
+        {
+          "uuid": "56f98235-1a68-47e6-a219-77d0986cb1ee",
+          "body": "[\n  {\n    \"ResourceID\": {{faker 'datatype.number'}},\n    \"Status\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "resource response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "2d676ba2-8360-4f1a-8957-1a4f75fa965d",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

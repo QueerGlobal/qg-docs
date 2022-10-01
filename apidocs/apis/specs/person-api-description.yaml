@@ -216,6 +216,9 @@ components:
       required:
         - value
       properties:
+        id:
+          type: number
+          format: int64
         value:
           type: string
 

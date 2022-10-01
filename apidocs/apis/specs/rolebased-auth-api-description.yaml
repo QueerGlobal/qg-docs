@@ -172,10 +172,10 @@ paths:
                 $ref: '#/components/schemas/Error'
 
 
-  /member/{id}:
+  /role/{id}:
     get:
-      summary: Returns a member by ID
-      description: Returns a member based on a single ID
+      summary: Returns a role by ID
+      description: Returns a role based on a single ID
       operationId: FindMemberById
       parameters:
         - name: id
@@ -190,7 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Member'
+                $ref: '#/components/schemas/Role'
         default:
           description: unexpected error
           content:
@@ -237,14 +237,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Member'
+              $ref: '#/components/schemas/Role'
       responses:
         '200':
           description: member
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Member'
+                $ref: '#/components/schemas/Role'
         default:
           description: unexpected error
           content:

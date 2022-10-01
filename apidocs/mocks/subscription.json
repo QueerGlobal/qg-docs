@@ -1,0 +1,343 @@
+{
+  "uuid": "951ef7a1-12e6-4d91-87e2-9a9f28fee3a0",
+  "lastMigration": 20,
+  "name": "QueerGlobal Subscription API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3010,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "bda05ebd-74cf-44ba-8c44-af29f05ded95",
+      "documentation": "Healthcheck for this API",
+      "method": "get",
+      "endpoint": "healthcheck",
+      "responses": [
+        {
+          "uuid": "7bc09b79-447f-4e79-b911-4a9a7f49ea48",
+          "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response to healthchecks",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "7b2d89d4-9d70-440f-8f68-584173530516",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "f2021416-ee71-4079-b326-32c9bc4ff648",
+      "documentation": "Returns a subscription by ID",
+      "method": "get",
+      "endpoint": "subscription/:id",
+      "responses": [
+        {
+          "uuid": "9a6f615e-f980-4867-8e0b-d55dcbcbb915",
+          "body": "{\n  \"subscriptionID\": {{faker 'datatype.number'}},\n  \"OwnerPersonID\": {{faker 'datatype.number'}},\n  \"subscriptionType\": {\n    \"subscriptionTypeID\": {{faker 'datatype.number'}},\n    \"subscriptionTypeName\": {{faker 'datatype.number'}}\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "subscription response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "19cf328a-8240-4244-aa94-f75994ef1bd0",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7ea0b693-ef3b-458b-965f-8f1adc1adea9",
+      "documentation": "Deletes a subscription by ID",
+      "method": "delete",
+      "endpoint": "subscription/:id",
+      "responses": [
+        {
+          "uuid": "868a5808-0525-4736-9b4b-7fd277b789ac",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "subscription deleted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "0d5f98b1-1700-4cf2-b158-3cad49fe8b4f",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6959ae94-0d56-4aca-a0d4-db2edf2c7100",
+      "documentation": "Update a subscription",
+      "method": "put",
+      "endpoint": "subscription/:id",
+      "responses": [
+        {
+          "uuid": "358bcb94-b121-4835-9859-e59ca31d75c6",
+          "body": "{\n  \"subscriptionID\": {{faker 'datatype.number'}},\n  \"OwnerPersonID\": {{faker 'datatype.number'}},\n  \"subscriptionType\": {\n    \"subscriptionTypeID\": {{faker 'datatype.number'}},\n    \"subscriptionTypeName\": {{faker 'datatype.number'}}\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "subscription",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "8a9dd8a0-20da-4afc-bebd-b53004566b75",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d7d204a2-7d20-41f8-b974-9044e72c87b3",
+      "documentation": "Creates a new subscription",
+      "method": "post",
+      "endpoint": "subscription",
+      "responses": [
+        {
+          "uuid": "5b11ba34-8a7c-4d72-b4db-030653532016",
+          "body": "{\n  \"subscriptionID\": {{faker 'datatype.number'}},\n  \"OwnerPersonID\": {{faker 'datatype.number'}},\n  \"subscriptionType\": {\n    \"subscriptionTypeID\": {{faker 'datatype.number'}},\n    \"subscriptionTypeName\": {{faker 'datatype.number'}}\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "subscription",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "055cd324-139d-454b-9a4d-9b79323e292b",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8efac696-951d-45e1-abd5-60ba0edb2be7",
+      "documentation": "Returns subscription based on query string",
+      "method": "get",
+      "endpoint": "subscription",
+      "responses": [
+        {
+          "uuid": "52c2b618-cb90-487c-9cd9-9a9d1adaa40f",
+          "body": "[\n  {\n    \"subscriptionID\": {{faker 'datatype.number'}},\n    \"OwnerPersonID\": {{faker 'datatype.number'}},\n    \"subscriptionType\": {\n      \"subscriptionTypeID\": {{faker 'datatype.number'}},\n      \"subscriptionTypeName\": {{faker 'datatype.number'}}\n    }\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "subscription response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "4fff2488-c8ee-4bbf-bf26-4add33180b95",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

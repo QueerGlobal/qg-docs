@@ -243,7 +243,7 @@ components:
         value:
           type: string
 
-    SocialLinks:
+    SocialLink:
       required:
         - serviceName
         - linkToService

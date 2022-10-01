@@ -1,0 +1,343 @@
+{
+  "uuid": "81241aa8-cca5-451d-89fe-8969a69d80e2",
+  "lastMigration": 20,
+  "name": "QueerGlobal Locations API",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3004,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "a4aed4a8-5a60-43b7-b170-f3465ae9e3fc",
+      "documentation": "Healthcheck for this API",
+      "method": "get",
+      "endpoint": "healthcheck",
+      "responses": [
+        {
+          "uuid": "b65adbbf-190e-480f-9bff-e7818cb2a96d",
+          "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response to healthchecks",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "66b63c08-c80e-46c5-a0ab-54d52a698dd1",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3d9b2bb3-b83f-405d-b437-ffa712d0c871",
+      "documentation": "Returns a member by ID",
+      "method": "get",
+      "endpoint": "member/:id",
+      "responses": [
+        {
+          "uuid": "c04bf616-9ee7-4863-9013-88c9272cc847",
+          "body": "{\n  \"StreetAddressLines\": \"\",\n  \"Country\": \"\",\n  \"AdminstrativeArea\": \"\",\n  \"Locality\": \"\",\n  \"Lat\": {{faker 'datatype.number'}},\n  \"Long\": {{faker 'datatype.number'}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "f81da2e4-8761-4ed9-a09c-1eac2a252d4f",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4b041d40-7fbb-4bdb-87b6-8a19264f54da",
+      "documentation": "Deletes a member by ID",
+      "method": "delete",
+      "endpoint": "member/:id",
+      "responses": [
+        {
+          "uuid": "36d716c1-22bf-4845-84ec-9efdf60a8c6a",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "member deleted",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "ac7c9316-e5f2-4f7f-b012-b465e6318287",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9d5244fa-5f53-4265-beb0-4dcd89d0961b",
+      "documentation": "Update a member",
+      "method": "put",
+      "endpoint": "member/:id",
+      "responses": [
+        {
+          "uuid": "eda48f35-a9b8-45c2-87cd-0cdf79e459d5",
+          "body": "{\n  \"StreetAddressLines\": \"\",\n  \"Country\": \"\",\n  \"AdminstrativeArea\": \"\",\n  \"Locality\": \"\",\n  \"Lat\": {{faker 'datatype.number'}},\n  \"Long\": {{faker 'datatype.number'}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "38fca674-87c6-4104-a71e-e14eed5e70b6",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ed25d7d5-97b3-4a16-9ee6-c5ed9cd2a3a5",
+      "documentation": "Creates a new member",
+      "method": "post",
+      "endpoint": "member",
+      "responses": [
+        {
+          "uuid": "ed14a2bd-cf49-479f-93bb-3fdc08eb7681",
+          "body": "{\n  \"StreetAddressLines\": \"\",\n  \"Country\": \"\",\n  \"AdminstrativeArea\": \"\",\n  \"Locality\": \"\",\n  \"Lat\": {{faker 'datatype.number'}},\n  \"Long\": {{faker 'datatype.number'}}\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "c6a44efb-d5c0-46c4-a103-ffa6e18bc7ad",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ba2dc7b5-63e2-41cb-8598-b35382309123",
+      "documentation": "Returns member based on query string",
+      "method": "get",
+      "endpoint": "member",
+      "responses": [
+        {
+          "uuid": "439e20ed-bb7a-43b0-b7fa-91914973aafc",
+          "body": "[\n  {\n    \"StreetAddressLines\": \"\",\n    \"Country\": \"\",\n    \"AdminstrativeArea\": \"\",\n    \"Locality\": \"\",\n    \"Lat\": {{faker 'datatype.number'}},\n    \"Long\": {{faker 'datatype.number'}}\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "member response",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "9de8a285-a54c-4fec-91f4-43ae70eb78e4",
+          "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "unexpected error",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
