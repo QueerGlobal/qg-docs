@@ -64,7 +64,9 @@ Some notes about contributing:
 
   - That being the case, for the sake of efficiency and maintainability it is somewhat simpler to keep code that reuses objects / business logic together. If, for example, there are existing create and update methods in one language, we will be more likely to accept a pull request that continues the work in that same language over a pull request that uses a different language (assuming both were submitted at the same time.)
 
-    
+- Discussions about architecture and design will all occur in the discussions on this documentation repository, even if the conversation pertains to one of the microservice or front end repositories. 
+
+- ADRs, Spikes, and other architecural artifacts will live in this documentation repository.
 
 
 
