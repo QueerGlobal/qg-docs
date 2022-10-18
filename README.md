@@ -1,6 +1,6 @@
 # Queer Global
 
-The purpose of the Queer Global project is to help least represented members of the LGBTQIA+ community through the sharing of information. This is an organization that puts people of color, disability, size, education, locational and financial oppression first. 
+The Queer Global is focused on the least represented members of the LGBTQIA+ community, and aims to help people help one another through the sharing of information. This is an organization that puts people of color, disability, size, education, locational and financial oppression first. 
 
 Our goal is to build a repository where resources can be uploaded and shared. These can be medical, financial, general information, or businesses and events where queer folks are welcoed, supported and uplifted. 
 
