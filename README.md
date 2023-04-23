@@ -6,6 +6,11 @@ Our goal is to build a repository where resources can be uploaded and shared. Th
 
 We are reaching out to the open source community to help us with our mission.
 
+
+## Rearchitecture Status
+At this point in time, we're in the process of moving QueerGlobal to a monorepo that serves as a single point of knowledge across codebases. This migration is still in process. If there's a desire to contribute or
+comment, first check out the issues or pull requests to make sure they're not overlapping others, and then either contribute to an existing issue or pull request or create a new one.
+
 ## Architecture
 
 Queer Global is building a web application utilizing React on the front end and employing a microservices-based architecture on the back-end. 
