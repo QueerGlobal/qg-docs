@@ -8,7 +8,7 @@ Our goal is to build a repository where resources can be uploaded and shared, an
 
 We are reaching out to the open source community to help us with our mission.
 
-Our [Code of Conduct](https://github.com/QueerGlobal/qg-docs/main/CODE_OF_CONDUCT.md) covers this documentation as well as any other communication with QueerGlobal or any people involved with QueerGlobal
+Our [Code of Conduct](https://github.com/QueerGlobal/qg-docs/blob/main/CODE_OF_CONDUCT.md) covers this documentation as well as any other communication with QueerGlobal or any people involved with QueerGlobal
 
 
 # Table of Contents
