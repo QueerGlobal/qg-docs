@@ -34,6 +34,10 @@ One can add the --global flag to this command to make this setting apply to all 
 - The "new" [(as of 2021-2022)](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) method of automating signatures is generating an SSH key involve generating a cipher and public key for encryption and decryption. 
 - There is and added conformity to what local environment and remote repository settings are for code contributions, for QG developers.
 
+Bonus pros, courtesy of Mark Nyon: 
+- SSH authentication for GitHub repos make for easier authentication, IME
+- Avoiding OS Specific credential helpers, which have been flaky over the years
+- Verification reduces the likelihood of someone anonymously joining the team and raising a ruckus.
 
 ## 🛑 Cons
 - It is an added step to the code contribution process.
