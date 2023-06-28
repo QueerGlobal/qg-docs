@@ -50,7 +50,7 @@ Wireframes, mockups, prototypes, etc. TBD
 
 ### Application Architecture Overview
 List of minimum requirements for local development
-- Node JS version 18.9.1
+- Node JS LTS (as of June 2023) version
 - NPM version TBD
 - MySQL version TBD
 - Etc. TBD
