@@ -2,7 +2,7 @@
 Implementing and Utilizing Verified Signature Automation Process on GitHub, for QG Commits
 
 ## 🥅 Goal
-To familiarize the team with the option of using GitHub's SSL or GPG-configured verified signatures for code change commits. 
+To familiarize the team with the option of using GitHub's SSH or GPG-configured verified signatures for code change commits. 
 
 
 ## 🧑🏽 Story/Stakeholder
@@ -27,6 +27,9 @@ A developer can also set up their Git client's environment to automatically sign
 `git config commit.gpgsign true`
 `git config gpg.format openpgp` or `git config gpg.format ssh`
 One can add the --global flag to this command to make this setting apply to all repositories on the local machine, not just QG repository work.
+
+From Mark Nyon:
+"Here's [documentation](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on setting up SSH keys and GitHub. Pretty straightforward. I need to get my GPG situation together and add one of those keys."
 
 
 ## ✅ Pros
