@@ -50,6 +50,7 @@ Wireframes, mockups, prototypes, etc. TBD
 
 ### Application Architecture Overview
 List of minimum requirements for local development
+- Golang TBD
 - Node JS LTS (as of June 2023) version
 - NPM version TBD
 - MySQL version TBD
@@ -59,9 +60,10 @@ Create-React-App, Node JS?, ESLint, MySQL?.
 Handling stale API data? 
 Pull request reviews consist of engineers across the team zeroing in on all aspects of each other's code.
 
-MySQL
-React
-Create-React-App boilerplate
+[Golang](https://go.dev/)
+[MySQL](https://dev.mysql.com/)
+[React](https://reactjs.org/)
+[Create-React-App boilerplate](https://create-react-app.dev/)
 Dedicated GH repo for client front-end app
 Dedicated GH repo for microservices
 
@@ -83,6 +85,8 @@ A demo-repository is being planned for a staging version of the app.
 Unit, automated, QA, user, performance - TBD
 
 To be used: [Accessibility Conformance Report, 2018](https://www.fdic.gov/about/doing-business/acquisition/acr.pdf) - Information Technology Industry Council
+
+Testing risks? Taking more than expected time? What do do with faulty tests; TBD
 
 ### Documentation
 A GitHub repository of documents, future Wiki, TBD. 
@@ -112,7 +116,7 @@ Lighthouse Node module - For local report generation
 For testing web pages in production
 
 ### Maintenance
-Bugs; TBD
+Bug-tracking procedures; TBD
 
 ### Educating the user
 FAQs, video tuts, video interviews, TBD
