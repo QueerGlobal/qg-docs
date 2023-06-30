@@ -63,7 +63,6 @@ External/third-party
 ## Pull Request
 Note: Created from entries already added to past PRs.
 
-Structure:
 ```
 Description
 --- Describe your changes in detail
@@ -116,8 +115,30 @@ Contact Me By
 ---
 
 ## Spike
+```
+📈 Spike - Title Goes Here
 
-Requirements
+🥅 Goal
+
+🧑🏽 Story/Stakeholder
+
+📇 Details
+- Implementation
+
+✅ Pros
+
+🛑 Cons
+
+⌛ Timebox
+
+👀 Review
+
+🔚 Conclusion
+
+🤙🏽 For More Info
+
+📚 References
+```
 
 ---
 
