@@ -21,6 +21,9 @@ A term used to describe a person who is not heterosexual.
 ## Refactor
 The presence of anything not included in the feature requirements but DOES meet the required workflow, process or function point.
 
+## Resource
+TBD
+
 ## Severity (Levels)
 The degree of impact a bug has on the system.
 1. Critical: The bug causes the system to crash, or data loss.
