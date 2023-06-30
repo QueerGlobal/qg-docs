@@ -1,5 +1,5 @@
-# 📈 Spike
-Implementing and Utilizing Verified Signature Automation Process on GitHub, for QG Commits
+# 📈 Spike - GitHub Verified Commits
+Implementing and utilizing the verified signature automation process on GitHub, for QG commits.
 
 ## 🥅 Goal
 To familiarize the team with the option of using GitHub's SSH or GPG-configured verified signatures for code change commits. 
@@ -62,12 +62,12 @@ Overall the automated setup method is a set it and forget it occurrence that wil
 Either way, it works to ensure that the code being contributed to by the person who is claiming to have written it. It is also a good way to ensure that the code being contributed is from a trusted source that understands and respects the sensitive demographic that we are targeting.
 
 
+## 🤙🏽 For More Info
+Slack: "Meke (Mickey) - She/her/cornball"
+
+
 ## 📚 References
 [GitHub doc on commit sigs](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits)
 [YouTube Shorts on Git Verification Process Using GPG](https://youtube.com/shorts/oIGzfvBb6Hk?feature=share)
 [Information on the signing key setting of Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
 [Simplify signing Git commits and tags with SSH keys](https://www.youtube.com/watch?v=uhy_ojFqLg0)
-
-
-## 🤙🏽 For More Info
-Slack: "Meke (Mickey) - She/her/cornball"
