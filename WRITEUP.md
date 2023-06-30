@@ -12,7 +12,7 @@ For all frontend-oriented work there are the QG GitHub account's [issues](https:
 
 Note: Initially there were no standards in place for things like how to write pull request comments, code formatting and style, and how to distribute work to new team members, regardless of their experience level. We all had to work together through situations usually laid out ahead of time by management for an established entity. We became our own AND each other’s “Manager”. The end result is our current culture: Where own standards for how to work together are accepted while at the same time being courageously open to and ready for inevitable needed changes. There is an acceptance of our autonomy through trust.
 
-### Communication with Volunteers
+### Communication with Interested/New Volunteers
 Deacon is the QG Co-Founder and is ever-present to greet one and all. In all Slack channels, Deacon is the one who will direct volunteers to the QG family. 
 
 Once team members join the QG Slack, and Deacon announces them, they have access to the full family and is welcome to take initiative in introducing themselves in 1:1 conversations and in the general Slack channels.
@@ -41,7 +41,6 @@ From UX interviews?
 
 Research?
 
-
 ### Design
 A traditional web application structure of main pages as well as unique features such as sharing artworks.
 
@@ -65,7 +64,7 @@ Pull request reviews consist of engineers across the team zeroing in on all aspe
 [React](https://reactjs.org/)
 [Create-React-App boilerplate](https://create-react-app.dev/)
 Dedicated GH repo for client front-end app
-Dedicated GH repo for microservices
+Dedicated GH repos for microservices
 
 Logging - Management Tool
 Client (FE): TBD
@@ -75,18 +74,21 @@ API rates, stagnant data, observation?
 Network: TBD
 
 Version Control - Git; Repositories housed on GitHub
+
 As of June of 2023, every engineer can access, review, approve, and/or block a pull request
 
-Pull request template and labels created by team and are currently being formalized
+Pull request template and labels created by team and are currently being formalized [in this document](https://docs.google.com/document/d/1prQ08FbkMTHAMC2-BvpEeLSk3_YoRl18owza9_t3xJY/edit?pli=1)
 
 ### Testing
-A demo-repository is being planned for a staging version of the app. 
+A demo-repository is being planned for a staging version of the app. Here is [a spreadsheet of details](https://docs.google.com/spreadsheets/d/1xlDfIMQn_NXb4PbE8QkncdGxw6H-h9RGGHn8_45z5r4/edit#gid=584784234) for future group testing
 
 Unit, automated, QA, user, performance - TBD
 
 To be used: [Accessibility Conformance Report, 2018](https://www.fdic.gov/about/doing-business/acquisition/acr.pdf) - Information Technology Industry Council
 
 Testing risks? Taking more than expected time? What do do with faulty tests; TBD
+
+If signup, login, and/or payments tests are not working, this is a level 1 severity. Take the site down immediately.
 
 ### Documentation
 A GitHub repository of documents, future Wiki, TBD. 
@@ -95,12 +97,16 @@ Will cover requirements for product functionality, what went into the designs, a
 
 Changelog? TBD
 
+Database relations broken down in [this document](https://docs.google.com/document/d/1rt0V8w4bygqfRPnhwbbE9FCcKIAJI2yT1as8AMG_ehA/edit#heading=h.yfunt0g4gpy6)
+
 ### Deployment
 AWS? 
 
 Other cloud environment?
 
 A/B testing? SEO? TBD
+
+If signup, login, and/or payments are not working, then the app is not working. Take the site down immediately.
 
 ### Measurements/analysis
 Quality metrics, API connection rates, user feedback, TBD. Analytics is critical for the effectiveness of the product.
@@ -111,21 +117,25 @@ Example of measurement performance, from the open-source tool [Lighthouse Chrome
 - Select the Lighthouse panel
 - Hit "Generate report"
 
-
 Lighthouse Node module - For local report generation
+
 For testing web pages in production
+
+If signup, login, and/or payments are not working, then the app is not working. Take the site down immediately.
 
 ### Maintenance
 Bug-tracking procedures; TBD
 
+If signup, login, and/or payments are not working, then the app is not working. Take the site down immediately.
+
 ### Educating the user
 FAQs, video tuts, video interviews, TBD
-
 
 ## Mobile Development
 Probably not but TBD
 
-
 ## Marketing and Promotion
 TBD
 
+References:
+[IEEE 829 Test Plan Example, Ecommerce Website Cross Browser Testing Test Plan](https://docs.google.com/document/d/1F1TUX5BkviRbw8auI2Xq2K2wyGTS-Ag14DRymiELmzc/edit)
