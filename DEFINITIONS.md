@@ -5,17 +5,28 @@ Definitions of frequently-used terms within the QueerGlobal project. Every term'
 ## API
 Application Program Interface
 
+## Architecture
+The overall design of a software system, and the software components it is comprised of, the externally visible properties of those components, and the relationships among them.
+
 ## Bug
 Any error or defect that cause the software/application or hardware to malfunction. 
 
 ## Chore
 The presence of anything not included in the feature requirements and does not meet the required workflow, process or function point.
 
+## Cloud
+
+## Cloud Native
+Building and running applications in a way that fully utilizes the benefits provided by cloud environments. It involves developing applications as a collection of loosely coupled, independently deployable services, often referred to as microservices, which can be scaled independently based on demand.
+
 ## End-to End Testing
 Tests user scenarios and various path conditions by verifying that the system runs and performs tasks accurately with the same set of data from beginning to end, as intended.
 
 ## Enhancement
 Any alteration or modification to the existing system for better workflow and process.   
+
+## Infrastructure (Software Application)
+The underlying foundation or basic framework of a system. 
 
 ## Microservices
 Same as Nanoservices. A software development technique—a variant of the service-oriented architecture (SOA) architectural style that structures an application as a collection of loosely coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight.
