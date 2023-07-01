@@ -67,5 +67,11 @@ A description of a feature requirement from the perspective of the end-user.
 
 -----
 
+## Icons
+
+
+-----
+
 ### References:
 [cancer Biomedical Informatics Grid Test Plan Template](https://docs.google.com/document/d/1Lkn3Z55J5bCIkeea8xKmKTHOXFunngfLf-ubWlmsuOo/edit), a public Google Doc
+[GitHub Opticons](https://github.com/primer/octicons)
