@@ -53,9 +53,12 @@ List of minimum requirements for local development
 - Node JS LTS (as of June 2023) version
 - NPM version TBD
 - MySQL version TBD
+- ESLint Extension
+- Golang CI/CS Lint
+- Precommit, a language-specific commit checker
 - Etc. TBD
 
-Create-React-App, Node JS?, ESLint, MySQL?. 
+Create-React-App, Node JS?, MySQL?. 
 Handling stale API data? 
 Pull request reviews consist of engineers across the team zeroing in on all aspects of each other's code.
 
