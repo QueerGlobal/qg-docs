@@ -28,10 +28,25 @@ Any alteration or modification to the existing system for better workflow and pr
 ## Infrastructure (Software Application)
 The underlying foundation or basic framework of a system. 
 
+## Major (Change)
+When there are incompatible API changes that makes an application not work as expected. 
+
+An application's major version is signified in the first number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
+
 ## Microservices
 Same as Nanoservices. A software development technique—a variant of the service-oriented architecture (SOA) architectural style that structures an application as a collection of loosely coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight.
 
 Microservices architecture is an architectural style where a complex application is decomposed into smaller, loosely coupled, and independently deployable services. Each service focuses on a specific business capability and communicates with other services through well-defined APIs. Microservices are typically developed and deployed independently, allowing for scalability, flexibility, and easier maintenance.
+
+## Minor (Semantic Versioning)
+When there are new functionalities or features added to the software.
+
+An application's minor version is signified in the second number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
+
+## Patch (Semantic Versioning)
+When there are bug fixes.
+
+An application's patch version is signified in the third number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
 
 ## Priority (Levels)
 The degree of urgency when/where a bug has to be addressed.
@@ -50,11 +65,21 @@ The presence of anything not included in the feature requirements but DOES meet 
 ## Resource
 TBD
 
+## SemVer
+Semantic Versioning, aka SemVer, is a versioning system that uses a three-part number to identify each version of a software product: 
+- `major#` $:$ `minor#` $:$ `patch#`
+--- Major version is incremented when there are incompatible API changes. 
+--- Minor version is incremented when there are new functionalities or features added to the software. 
+--- Patch version is incremented when there are bug fixes.
+
 ## Severity (Levels)
 The degree of impact a bug has on the system.
 1. Critical: The bug causes the system to crash, or data loss.
 2. Major: The bug causes the system to produce incorrect, incomplete, inconsistent results, or the system to be unusable.
 3. Minor: The bug causes the system to produce incorrect, incomplete, inconsistent results, or the system to be unusable.
+
+## Spike
+TBD
 
 ## TBD
 To Be Determined
@@ -67,11 +92,22 @@ A description of a feature requirement from the perspective of the end-user.
 
 -----
 
-## Icons
+## Icons in Roadmap Board of Tickets
 
+![]() Git merge
+![]() Git pull request closed
+![]() Git pull request
+
+![]() Issue closed
+![]() Issue draft
+![]() Issue opened
 
 -----
 
 ### References:
 [cancer Biomedical Informatics Grid Test Plan Template](https://docs.google.com/document/d/1Lkn3Z55J5bCIkeea8xKmKTHOXFunngfLf-ubWlmsuOo/edit), a public Google Doc
 [GitHub Opticons](https://github.com/primer/octicons)
+[Infrastructure GitHub Board]()
+TODO: Add link to where our spikes are documented (three project board locations)
+[QueerGlobal Development Onboarding Documentation]()
+[Frontend Roadmap]()
