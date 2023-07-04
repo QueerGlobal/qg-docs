@@ -14,20 +14,21 @@ in order for a **User**
 to **Access the full QG Web Application**.
 
 ## 📇 Details
-
 ### Ory
 
-Ory is a collection of open source identity and access control services. It is a collection of services that can be used to build a complete identity and access control system. It is not a complete system itself.
+Ory is a collection of open source identity and access control services. It is a collection of services that can be used to build a complete identity and access control system. It is not a complete system itself. 
 
 Other Ory services are Hydra, Keto, Oathkeeper, and Keto.
 
 ### Kratos
 
-Kratos is an API-only service that provides identity and access control services. It is a complete system that can be used to build a complete identity and access control system. It is not a complete system itself.
+Kratos is an API-only service that provides identity and access control services. It is a complete system that can be used to build a complete identity and access control system. It is not a complete system itself. Even though open-source tools are imperative for open-source projects to utilize, it has to be either supported with documentation right away OR be based in an easy to learn tool set. Kratos is neither of these things.
 
 ### Ory and Kratos Working Together
 
 Ory and Kratos are two different things. Ory is a collection of services that can be used to build a complete identity and access control system. Kratos is a service that provides those very services. It is a complete system that can be used to build a complete identity and access control system. It is not a complete system itself.
+
+Ory Kratos is a fairly new and interesting project that is trying to solve the problem of authentication and authorization in a very modern way. It is a zero trust identity and access management (IAM) solution that can be used to secure web applications and APIs. It is a cloud native solution.
 
 Languages and tools they say Ory Kratos works with are Swift, React.js, Angular (client side), PHP, Ruby, Python, Java (server side), Node.js, and TypeScript. Database backends supported are SQLite, PostgreSQL, MySQL, and CockroachDB.
 
@@ -52,17 +53,21 @@ Another thing: Use `127.0.0.1` and NOT `localhost`. TIL from the tut that browse
 
 ## ✅ Pros
 
--   Kratos gives the options of HTTP redirects and anti-CSRF tokens
+- Kratos gives the options of HTTP redirects and anti-CSRF tokens
+- It is a standalone service that can be used with any programming language and framework. If you want to change the backend framework, you can easier than expected. Can be self-hosted or otherwise. This makes it low coupling.
+- An app doesn't hav to store PII for the user's identity or for the sign in/sign up flow.
 
 ## 🛑 Cons
 
--   Kratos uses cookies in order for the anti-CSRF tokens to work
+- Kratos uses cookies in order for the anti-CSRF tokens to work
+- Kratos is absolutely NOT beginner-friendly! Beginners tend to not be familiar with cloud computing, session tokens, Docker or Kubernetes. Kratos is a cloud native solution that can be deployed on tools like this.
 
 ## ⌛ Timebox
 
 ## 👀 Review
 
 ## 🔚 Conclusion
+I don't believe that this tool should be used in the QG app UNLESS there is a proper demonstration from the original suggestor, to explain why the tool is appropriate for the QG app, how to implement it, and how to administer the features of it for long-term support. Even though it is, supposedly, low maintenance, it is not low maintenance for a beginner. It is not beginner-friendly. 
 
 ## 🤙🏽 For More Info
 
@@ -76,3 +81,4 @@ Slack: "Meke (Mickey) - She/her/cornball"
 [Kratos Authentication](https://go-kratos.dev/en/docs/component/middleware/auth/)
 [The QG Kratos Self Service UI](https://github.com/QueerGlobal/qg-identity-service/tree/main/kratos-selfservice-ui-node)
 [The GitHub Kratos Repository](https://github.com/ory/kratos.git)
+[A great video demo of the Ory Kratos Quick Start project on Digital Ocean](https://www.youtube.com/watch?v=Agc27vpKyY0)
