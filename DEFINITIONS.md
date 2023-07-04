@@ -1,5 +1,5 @@
 # QG Terms and Key Word Definitions
-Definitions of frequently-used terms within the QueerGlobal project. Every term's definition comes from a summary pulled from Slack conversations, from ChatGPT, or from GitHub Copilot.
+Definitions of frequently-used terms within the QueerGlobal project. A developer may encounter some of these words or terms in various literature pertaining to the tools used by the application. Every term's definition comes from a summary pulled from Slack conversations, from ChatGPT, or from GitHub Copilot.
 
 
 ## API
@@ -23,7 +23,13 @@ Building and running applications in a way that fully utilizes the benefits prov
 Tests user scenarios and various path conditions by verifying that the system runs and performs tasks accurately with the same set of data from beginning to end, as intended.
 
 ## Enhancement
-Any alteration or modification to the existing system for better workflow and process.   
+Any alteration or modification to the existing system for better workflow and process. 
+
+## Framework
+An abstraction that provides generic functionality which can be selectively overridden or specialized for the implementer's end goal. In code, it provides specific functionality for a standard way to build and/or deploy applications much quicker and has a stronger foundation.
+
+## Identity and Access Management (IAM)
+A framework of policies and technologies for ensuring that the proper people in an enterprise have the appropriate access to technology resources.
 
 ## Infrastructure (Software Application)
 The underlying foundation or basic framework of a system. 
@@ -38,10 +44,19 @@ Same as Nanoservices. A software development technique—a variant of the servic
 
 Microservices architecture is an architectural style where a complex application is decomposed into smaller, loosely coupled, and independently deployable services. Each service focuses on a specific business capability and communicates with other services through well-defined APIs. Microservices are typically developed and deployed independently, allowing for scalability, flexibility, and easier maintenance.
 
+## Middleware
+A function, or set of functions, that has access to the _request_ and _response_ cycle. It can execute any code, make changes to the request and response objects, end the request-response cycle, and call the next middleware in the stack.
+
 ## Minor (Semantic Versioning)
 When there are new functionalities or features added to the software.
 
 An application's minor version is signified in the second number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
+
+## OAuth
+An open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the **passwords**. This mechanism is used by companies such as Amazon, Google, Facebook, Microsoft and Twitter to permit the users to share information about their accounts with third party applications or websites.
+
+## OpenID Connect 
+An authentication layer on top of OAuth 2.0. OpenID Connect allows clients of all types, including web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users.
 
 ## Patch (Semantic Versioning)
 When there are bug fixes.
@@ -64,6 +79,9 @@ The presence of anything not included in the feature requirements but DOES meet 
 
 ## Resource
 TBD
+
+## Scope Creep
+When a project grows beyond its original goals and objectives. Any open-source project must keep its app's scope reasonable, especially for a first version that is free.
 
 ## SemVer
 Semantic Versioning, aka SemVer, is a versioning system that uses a three-part number to identify each version of a software product: 
@@ -89,6 +107,9 @@ A pre-formatted starting point for a new document.
 
 ## User Story
 A description of a feature requirement from the perspective of the end-user.
+
+## Zero Trust
+A security concept centered on the belief that organizations should not automatically trust **anything** inside or outside its perimeters and instead must verify anything and everything trying to connect to its systems before granting access.
 
 -----
 
