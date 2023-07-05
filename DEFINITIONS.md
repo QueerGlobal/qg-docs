@@ -11,18 +11,24 @@ The overall design of a software system, and the software components it is compr
 ## Bug
 Any error or defect that cause the software/application or hardware to malfunction. 
 
-## Chore
-The presence of anything not included in the feature requirements and does not meet the required workflow, process or function point.
+## Chore (Pull Request Label)
+The presence of new/changed code that is: 
+1) not included in the feature requirements 
+2) does not meet the required workflow, process or function point
 
 ## Cloud
+A "cloud" is just a network of servers, each with a unique function. Some servers use computing power to run applications or "deliver a service." Others are responsible for storing data or files.
 
 ## Cloud Native
 Building and running applications in a way that fully utilizes the benefits provided by cloud environments. It involves developing applications as a collection of loosely coupled, independently deployable services, often referred to as microservices, which can be scaled independently based on demand.
 
+## Container
+A code sandbox; A standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+
 ## End-to End Testing
 Tests user scenarios and various path conditions by verifying that the system runs and performs tasks accurately with the same set of data from beginning to end, as intended.
 
-## Enhancement
+## Enhancement (Pull Request Label)
 Any alteration or modification to the existing system for better workflow and process. 
 
 ## Framework
@@ -31,10 +37,13 @@ An abstraction that provides generic functionality which can be selectively over
 ## Identity and Access Management (IAM)
 A framework of policies and technologies for ensuring that the proper people in an enterprise have the appropriate access to technology resources.
 
+## Image (Container)
+A file that contains all the necessary dependencies and configuration required to run a containerized application.
+
 ## Infrastructure (Software Application)
 The underlying foundation or basic framework of a system. 
 
-## Major (Change)
+## Major (Software Application Change)
 When there are incompatible API changes that makes an application not work as expected. 
 
 An application's major version is signified in the first number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
@@ -47,7 +56,7 @@ Microservices architecture is an architectural style where a complex application
 ## Middleware
 A function, or set of functions, that has access to the _request_ and _response_ cycle. It can execute any code, make changes to the request and response objects, end the request-response cycle, and call the next middleware in the stack.
 
-## Minor (Semantic Versioning)
+## Minor (Software Application Change)
 When there are new functionalities or features added to the software.
 
 An application's minor version is signified in the second number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
@@ -58,12 +67,12 @@ An open standard for access delegation, commonly used as a way for Internet user
 ## OpenID Connect 
 An authentication layer on top of OAuth 2.0. OpenID Connect allows clients of all types, including web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users.
 
-## Patch (Semantic Versioning)
+## Patch (Software Application Change)
 When there are bug fixes.
 
 An application's patch version is signified in the third number in a semantic versioning system that uses a three-part number to identify each version of a software product. Please see SemVer for more information.
 
-## Priority (Levels)
+## Priority (Level)
 The degree of urgency when/where a bug has to be addressed.
 1. Must Fix: This bug must be fixed immediately; the product cannot ship with this bug.
 2. Should Fix: These are important problems that should be fixed as soon as possible.  It would be an embarrassment to the company if this bug shipped.
@@ -77,7 +86,7 @@ A term used to describe a person who is not heterosexual.
 ## Refactor
 The presence of anything not included in the feature requirements but DOES meet the required workflow, process or function point.
 
-## Resource
+## Resource (The QueerGlobal Feature)
 TBD
 
 ## Scope Creep
@@ -90,14 +99,14 @@ Semantic Versioning, aka SemVer, is a versioning system that uses a three-part n
 --- Minor version is incremented when there are new functionalities or features added to the software. 
 --- Patch version is incremented when there are bug fixes.
 
-## Severity (Levels)
+## Severity (Level)
 The degree of impact a bug has on the system.
 1. Critical: The bug causes the system to crash, or data loss.
 2. Major: The bug causes the system to produce incorrect, incomplete, inconsistent results, or the system to be unusable.
 3. Minor: The bug causes the system to produce incorrect, incomplete, inconsistent results, or the system to be unusable.
 
 ## Spike
-TBD
+A document consisting of a researched summary of a feature or tool that is a possible addition to the application at hand; A document that is used to determine the viability of a feature or tool.
 
 ## TBD
 To Be Determined
