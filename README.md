@@ -1,8 +1,8 @@
 # Queer Global
 
-The Queer Global is focused on the least represented members of the LGBTQIA+ community, and aims to help people help one another through the sharing of information. This is an organization that puts people of color, disability, size, education, locational and financial oppression first. 
+Queer Global is focused on the least represented members of the LGBTQIA+ community, and aims to help people help one another through the sharing of information. This is an organization that puts people of color, disability, size, education, locational and financial oppression first. 
 
-Our goal is to build a repository where resources can be uploaded and shared. These can be medical, financial, general information, or businesses and events where queer folks are welcoed, supported and uplifted. 
+Our goal is to build a repository where resources can be uploaded and shared. These can be medical, financial, general information, or businesses and events where queer folks are welcomed, supported and uplifted. 
 
 We are reaching out to the open source community to help us with our mission.
 
@@ -17,7 +17,7 @@ Queer Global is building a web application utilizing React on the front end and 
 
 For our back-end contributors, we have built a mechanism that will allow us to collate API code using different technologies into a single published endpoint (so, for example, one contributor could write a POST method that registers an object with our search API in Python, and another contributor could write a GET method that executes a search in Golang.) We believe this will allow volunteers to contribute on a granular basis.
 
-Using microservices will also provide an evolvable architecture, allowing us to add additional services. We plan to develop converge on a generalized framework that will allow us to continuously evolve our architecture, but our current focus is around building out the microservices that represent our domain entities.
+Using microservices will also provide an evolvable architecture, allowing us to add additional services. We plan to converge on a generalized framework that will allow us to continuously evolve our architecture, but our current focus is around building out the microservices that represent our domain entities.
 
 ## Front End
 
@@ -61,11 +61,11 @@ In order to maximize the opportunity for members of the community to contribute,
 
 ## Contributing
 
-To contribute, please follow the instructions [here](https://github.com/QueerGlobal/qg-docs/CONTRIBUTING.md).
+To contribute, please follow the instructions [here](https://github.com/QueerGlobal/qg-docs/blob/main/CONTRIBUTING.md).
 
 Some notes about contributing:
 
-- We are open to a contributor creating a mini-service of only one or a few endpoints. We all have limited time, so if you feel you're able to contribute code a single GET method for one of our services, GREAT! We are open to your contribution, and you can develop in any of our supported languages, as a stand-alone mini-service (without having to worry about integrating it with a larger microservice) and we will take care of integrating it into the larger API through our framework.
+- We are open to a contributor creating a mini-service of only one or a few endpoints. We all have limited time, so if you feel you're able to contribute code for a single GET method for one of our services, GREAT! We are open to your contribution, and you can develop in any of our supported languages, as a stand-alone mini-service (without having to worry about integrating it with a larger microservice) and we will take care of integrating it into the larger API through our framework.
 
   - That being the case, for the sake of efficiency and maintainability it is somewhat simpler to keep code that reuses objects / business logic together. If, for example, there are existing create and update methods in one language, we will be more likely to accept a pull request that continues the work in that same language over a pull request that uses a different language (assuming both were submitted at the same time.)
 
