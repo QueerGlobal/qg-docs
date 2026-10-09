@@ -4,17 +4,17 @@ Queer Global is building a place to share trusted information, resources, events
 
 ## Where to look
 
-- **Live site (placeholder):** [https://queerglobal.grandkru.com](https://queerglobal.grandkru.com) — a coming-soon page until the app ships. `queerglobal.com` is not yet pointed anywhere Grand Kru controls, so everything that would launch there launches on this Grand Kru subdomain for now.
+- **Live site (placeholder):** [https://queerglobal.com](https://queerglobal.com) — a coming-soon page until the app ships
 - **Intended app:** [qg-frontend-v2](https://github.com/QueerGlobal/qg-frontend-v2)
 - **This repo:** contributor docs and current status
 
 ## Status
 
-The public site is a placeholder, not the React app. Work in progress:
+The public domain is a placeholder, not the React app. Work in progress:
 
 | Surface | State |
 | --- | --- |
-| [queerglobal.grandkru.com](https://queerglobal.grandkru.com) | Coming-soon / mission page (stand-in for `queerglobal.com`) |
+| [queerglobal.com](https://queerglobal.com) | Coming-soon / mission page |
 | Home (`/`) in qg-frontend-v2 | Has UI |
 | About (`/about`) | Has copy; image placeholders remain |
 | Donate, blog, profile, search, add-resource, logout | Heading stubs only |

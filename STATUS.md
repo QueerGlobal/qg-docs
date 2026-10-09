@@ -4,7 +4,7 @@ Last updated 2026-09-19.
 
 ## Live
 
-[https://queerglobal.grandkru.com](https://queerglobal.grandkru.com) is a coming-soon placeholder served by a Worker in [queerglobal.com](https://github.com/QueerGlobal/queerglobal.com). It stands in for `queerglobal.com` until that DNS is available. It is not the React app.
+[https://queerglobal.com](https://queerglobal.com) is a coming-soon placeholder in [queerglobal.com](https://github.com/QueerGlobal/queerglobal.com). It is not the React app.
 
 ## Intended app: qg-frontend-v2
 
