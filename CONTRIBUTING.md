@@ -12,4 +12,4 @@ Thanks for wanting to help Queer Global.
 - Keep the change focused.
 - In the PR, say what you changed and how you checked it.
 
-There is no staging deploy from this documentation repo. The live placeholder is [queerglobal.com](https://queerglobal.com).
+There is no staging deploy from this documentation repo. There is no public website yet.

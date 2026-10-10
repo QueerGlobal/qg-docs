@@ -2,9 +2,9 @@
 
 Last updated 2026-09-19.
 
-## Live
+## Public website
 
-[https://queerglobal.com](https://queerglobal.com) is a coming-soon placeholder in [queerglobal.com](https://github.com/QueerGlobal/queerglobal.com). It is not the React app.
+There is no public website yet. The [queerglobal.com](https://github.com/QueerGlobal/queerglobal.com) repo holds static content for a future launch. It is not the React app and is not served to visitors today.
 
 ## Intended app: qg-frontend-v2
 
@@ -47,4 +47,4 @@ Create React App (React 17). This is what we want the site to become.
 
 ## Not this pass
 
-Hub Framework, private microservices, auth, and replacing the placeholder with the React app on the domain are later work.
+Hub Framework, private microservices, auth, and launching the React app as the public site are later work.

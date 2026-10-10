@@ -4,17 +4,17 @@ Queer Global is building a place to share trusted information, resources, events
 
 ## Where to look
 
-- **Live site (placeholder):** [https://queerglobal.com](https://queerglobal.com) — a coming-soon page until the app ships
+- **Public website:** There is no public site yet.
 - **Intended app:** [qg-frontend-v2](https://github.com/QueerGlobal/qg-frontend-v2)
 - **This repo:** contributor docs and current status
 
 ## Status
 
-The public domain is a placeholder, not the React app. Work in progress:
+The React app in qg-frontend-v2 is work in progress and is not what people see on the web today:
 
 | Surface | State |
 | --- | --- |
-| [queerglobal.com](https://queerglobal.com) | Coming-soon / mission page |
+| Public website | Not live yet |
 | Home (`/`) in qg-frontend-v2 | Has UI |
 | About (`/about`) | Has copy; image placeholders remain |
 | Donate, blog, profile, search, add-resource, logout | Heading stubs only |
